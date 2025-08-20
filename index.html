@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王伟 教授的个人主页</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 300px;
+            padding: 40px;
+            background-color: #f0f2f5;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .sidebar h1 {
+            font-size: 1.8em;
+            margin: 10px 0 5px 0;
+        }
+        .sidebar p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+        .sidebar .contact-info {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+            width: 100%;
+        }
+        .sidebar .contact-info li {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .sidebar .contact-info a {
+            text-decoration: none;
+            color: #0366d6;
+        }
+        .sidebar .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px 50px;
+        }
+        .navbar {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+        }
+        .navbar li {
+            margin-right: 25px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            display: block;
+            padding: 15px 0;
+            border-bottom: 3px solid transparent;
+        }
+        .navbar a:hover, .navbar a.active {
+            color: #0366d6;
+            border-bottom-color: #0366d6;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.6em;
+            color: #1a1a1a;
+            border-bottom: 2px solid #0366d6;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #0366d6;
+        }
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                margin: 0;
+                border-radius: 0;
+            }
+            .sidebar {
+                width: auto;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <img src="profile.jpg" alt="个人照片" class="profile-pic">
+
+        <h1>王伟 / Wei Wang</h1>
+
+        <p>重庆工业大学</p>
+        <p>计算机科学与工程学院, 教授</p>
+        <p>研究方向为计算机视觉</p>
+
+        <ul class="contact-info">
+            <li>📍 中国重庆</li>
+            <li>📧 <a href="mailto:wei.wang@email.com">电子邮件</a></li>
+            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">🎓 谷歌学术</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <nav>
+            <ul class="navbar">
+                <li><a href="#about" class="active">关于我</a></li>
+                <li><a href="#research">研究方向</a></li>
+                <li><a href="#teaching">教学</a></li>
+                <li><a href="#news">新闻</a></li>
+                <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">出版物</a></li>
+            </ul>
+        </nav>
+
+        <section id="about">
+            <h2>📜 关于我</h2>
+            <p>
+                王伟目前是重庆工业大学计算机科学与工程学院的教授。他曾被授予重庆工业大学史学奖学金。在来重庆工业大学之前，他于2021年在南京大学获得博士学位。他分别于2013年和2017年在重庆交通大学和云南民族大学获得学士和硕士学位。
+            </p>
+        </section>
+
+        <section id="research">
+            <h2>🔬 研究方向</h2>
+            <ul>
+                <li>计算机视觉</li>
+                <li>图像/视频增强</li>
+                <li>模式识别</li>
+            </ul>
+        </section>
+
+        <section id="teaching">
+            <h2>🧑‍🏫 教学</h2>
+            <ul>
+                <li>计算机视觉</li>
+                <li>机器学习</li>
+                <li>深度学习</li>
+            </ul>
+        </section>
+
+        <section id="news">
+            <h2>🔥 新闻</h2>
+            <ul>
+                <li><b>2024.07:</b> 📢 一篇论文被ACM MM 2025（CCF-A）录用。</li>
+                <li><b>2024.06:</b> 📖 1篇论文被Pattern Recognition（SCI，中科院一区）录用。</li>
+                <li><b>2024.06:</b> 🥳 一篇论文被ACAIT 2025录用。</li>
+                <li><b>2024.05:</b> 🎉 恭喜何高怡和谢硕琦顺利通过硕士学位论文答辩！</li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
