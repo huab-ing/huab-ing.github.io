@@ -3,199 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王伟 教授的个人主页</title>
+    <title>课题组名称</title>
     <style>
+        /* --- 全局样式 --- */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-            line-height: 1.6;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             color: #333;
+            line-height: 1.7;
         }
         .container {
-            display: flex;
-            max-width: 1200px;
-            margin: 40px auto;
-            background-color: #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-radius: 8px;
-            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .sidebar {
-            width: 300px;
-            padding: 40px;
-            background-color: #f0f2f5;
-            border-right: 1px solid #e0e0e0;
+
+        /* --- 导航栏 --- */
+        header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eaeaea;
         }
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .sidebar h1 {
+        header .group-name {
             font-size: 1.8em;
-            margin: 10px 0 5px 0;
+            font-weight: bold;
         }
-        .sidebar p {
-            margin: 5px 0;
-            font-size: 0.95em;
-            color: #555;
-        }
-        .sidebar .contact-info {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-            text-align: left;
-            width: 100%;
-        }
-        .sidebar .contact-info li {
-            margin-bottom: 10px;
-            font-size: 0.9em;
-        }
-        .sidebar .contact-info a {
-            text-decoration: none;
-            color: #0366d6;
-        }
-        .sidebar .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .main-content {
-            flex: 1;
-            padding: 20px 50px;
-        }
-        .navbar {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 30px 0;
-            border-bottom: 1px solid #e0e0e0;
-            display: flex;
-        }
-        .navbar li {
-            margin-right: 25px;
-        }
-        .navbar a {
+        header nav a {
+            margin-left: 25px;
             text-decoration: none;
             color: #555;
-            font-weight: 600;
-            display: block;
-            padding: 15px 0;
-            border-bottom: 3px solid transparent;
+            font-size: 1.1em;
+            font-weight: 500;
         }
-        .navbar a:hover, .navbar a.active {
-            color: #0366d6;
-            border-bottom-color: #0366d6;
+        header nav a:hover {
+            color: #007bff;
         }
+
+        /* --- 内容区块 --- */
         section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .section-subtitle {
+            font-size: 1.2em;
+            color: #777;
             margin-bottom: 40px;
         }
-        h2 {
-            font-size: 1.6em;
-            color: #1a1a1a;
-            border-bottom: 2px solid #0366d6;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+
+        /* --- 成员卡片 --- */
+        .subsection-title {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 300;
+            color: #aaa;
+            margin: 40px 0;
         }
+        .member-card {
+            display: flex;
+            align-items: center;
+            background-color: #fcfcfc;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: box-shadow 0.3s ease;
+        }
+        .member-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .member-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 25px;
+            object-fit: cover;
+        }
+        .member-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.4em;
+        }
+        .member-info p {
+            margin: 0;
+            color: #666;
+        }
+        .member-info .research-topic {
+            margin-top: 8px;
+            color: #333;
+            font-style: italic;
+        }
+
+        /* --- 论文和新闻列表 --- */
         ul {
-            padding-left: 20px;
+            list-style: none;
+            padding: 0;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
-        a {
-            color: #0366d6;
+        .news-item .date {
+            display: block;
+            color: #888;
+            font-size: 0.9em;
         }
-        @media (max-width: 900px) {
-            .container {
+        .paper-item .title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .paper-item .authors {
+            display: block;
+            color: #555;
+        }
+        .paper-item .venue {
+            display: block;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* --- 团队活动照片墙 --- */
+        .activity-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .activity-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .activity-item p {
+            text-align: center;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* --- 页脚 --- */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        /* --- 响应式设计 --- */
+        @media (max-width: 768px) {
+            header {
                 flex-direction: column;
-                margin: 0;
-                border-radius: 0;
             }
-            .sidebar {
-                width: auto;
-                border-right: none;
-                border-bottom: 1px solid #e0e0e0;
+            header nav {
+                margin-top: 15px;
             }
-            .main-content {
-                padding: 20px;
+            .member-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .member-card img {
+                margin-right: 0;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <aside class="sidebar">
-        <img src="profile.jpg" alt="个人照片" class="profile-pic">
+    <div class="container">
+        <header>
+            <div class="group-name">AdvML-Group</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#news">News</a>
+                <a href="#publications">Publication</a>
+                <a href="#people">People</a>
+                <a href="#activities">Activities</a>
+            </nav>
+        </header>
 
-        <h1>王伟 / Wei Wang</h1>
+        <main>
+            <section id="about">
+                <h2 class="section-title">About Our Group</h2>
+                <p class="section-subtitle">这里是关于课题组的详细介绍。例如：我们是隶属于XX大学XX学院的研究小组，致力于研究前沿的人工智能安全和对抗性机器学习技术。我们的目标是构建更安全、更可靠、更值得信赖的人工智能系统。</p>
+            </section>
 
-        <p>重庆工业大学</p>
-        <p>计算机科学与工程学院, 教授</p>
-        <p>研究方向为计算机视觉</p>
+            <section id="news">
+                <h2 class="section-title">News</h2>
+                <ul>
+                    <li class="news-item">
+                        <span class="date">Aug 2025</span>
+                        祝贺张三同学的论文被顶级会议 NeurIPS 接收！
+                    </li>
+                    <li class="news-item">
+                        <span class="date">Jul 2025</span>
+                        欢迎新成员李四、王五加入我们课题组。
+                    </li>
+                </ul>
+            </section>
+            
+            <section id="publications">
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">我们的部分代表性研究成果。</p>
+                <ul>
+                    <li class="paper-item">
+                        <span class="title">A New Method for Imperceptible Adversarial Attack</span>
+                        <span class="authors">San Zhang, Si Li, and **Wei Wang**</span>
+                        <span class="venue">Conference on Computer Vision and Pattern Recognition (CVPR), 2025</span>
+                    </li>
+                    <li class="paper-item">
+                        <span class="title">Exploring the Robustness of Large Language Models</span>
+                        <span class="authors">Wu Wang and **Wei Wang**</span>
+                        <span class="venue">Journal of Machine Learning Research (JMLR), 2024</span>
+                    </li>
+                </ul>
+            </section>
 
-        <ul class="contact-info">
-            <li>📍 中国重庆</li>
-            <li>📧 <a href="mailto:wei.wang@email.com">电子邮件</a></li>
-            <li><a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">🎓 谷歌学术</a></li>
-        </ul>
-    </aside>
+            <section id="people">
+                <h2 class="section-title">People</h2>
+                <p class="section-subtitle">我们团队的所有成员。</p>
+                
+                <h3 class="subsection-title">Principal Investigator</h3>
+                <div class="member-card">
+                    <img src="teacher_photo.jpg" alt="导师照片">
+                    <div class="member-info">
+                        <h3>Wei Wang (王伟)</h3>
+                        <p>Ph.D., XX University</p>
+                        <p class="research-topic">Research Topic: Machine Learning, Optimization, AI Security.</p>
+                    </div>
+                </div>
 
-    <main class="main-content">
-        <nav>
-            <ul class="navbar">
-                <li><a href="#about" class="active">关于我</a></li>
-                <li><a href="#research">研究方向</a></li>
-                <li><a href="#teaching">教学</a></li>
-                <li><a href="#news">新闻</a></li>
-                <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">出版物</a></li>
-            </ul>
-        </nav>
+                <h3 class="subsection-title">Master Students</h3>
+                <div class="member-card">
+                    <img src="student1_photo.jpg" alt="学生照片">
+                    <div class="member-info">
+                        <h3>San Zhang (张三)</h3>
+                        <p>Starting in Fall 2024</p>
+                        <p class="research-topic">Research Topic: Sparse and Imperceptible Adversarial Attack.</p>
+                    </div>
+                </div>
+                 <div class="member-card">
+                    <img src="student2_photo.jpg" alt="学生照片">
+                    <div class="member-info">
+                        <h3>Si Li (李四)</h3>
+                        <p>Starting in Fall 2023</p>
+                        <p class="research-topic">Research Topic: Robustness of Large Language Models.</p>
+                    </div>
+                </div>
+            </section>
 
-        <section id="about">
-            <h2>📜 关于我</h2>
-            <p>
-                王伟目前是重庆工业大学计算机科学与工程学院的教授。他曾被授予重庆工业大学史学奖学金。在来重庆工业大学之前，他于2021年在南京大学获得博士学位。他分别于2013年和2017年在重庆交通大学和云南民族大学获得学士和硕士学位。
-            </p>
-        </section>
-
-        <section id="research">
-            <h2>🔬 研究方向</h2>
-            <ul>
-                <li>计算机视觉</li>
-                <li>图像/视频增强</li>
-                <li>模式识别</li>
-            </ul>
-        </section>
-
-        <section id="teaching">
-            <h2>🧑‍🏫 教学</h2>
-            <ul>
-                <li>计算机视觉</li>
-                <li>机器学习</li>
-                <li>深度学习</li>
-            </ul>
-        </section>
-
-        <section id="news">
-            <h2>🔥 新闻</h2>
-            <ul>
-                <li><b>2024.07:</b> 📢 一篇论文被ACM MM 2025（CCF-A）录用。</li>
-                <li><b>2024.06:</b> 📖 1篇论文被Pattern Recognition（SCI，中科院一区）录用。</li>
-                <li><b>2024.06:</b> 🥳 一篇论文被ACAIT 2025录用。</li>
-                <li><b>2024.05:</b> 🎉 恭喜何高怡和谢硕琦顺利通过硕士学位论文答辩！</li>
-            </ul>
-        </section>
-    </main>
-</div>
+            <section id="activities">
+                <h2 class="section-title">Group Activities</h2>
+                <p class="section-subtitle">工作之余，我们也享受生活。</p>
+                <div class="activity-gallery">
+                    <div class="activity-item">
+                        <img src="activity1.jpg" alt="活动照片1">
+                        <p>2025夏季烧烤团建</p>
+                    </div>
+                    <div class="activity-item">
+                        <img src="activity2.jpg" alt="活动照片2">
+                        <p>2024年度羽毛球比赛</p>
+                    </div>
+                    <div class="activity-item">
+                        <img src="activity3.jpg" alt="活动照片3">
+                        <p>欢送毕业生聚餐</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+             <p>© 2025 Your-Group-Name. All Rights Reserved.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
